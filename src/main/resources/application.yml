@@ -2,7 +2,7 @@ spring:
   profiles:
     active: local
     group:
-      local: local, common
+      local: common
       blue: blue, common
       green: green, common
 
@@ -14,13 +14,10 @@ server:
 spring:
   config:
     activate:
-      on-profile: local
+      on-profile: common
 
-server:
-  port: 8080
-  address: localhost
+serverName: common
 
-serverName: local_server
 
 ---
 
@@ -31,7 +28,7 @@ spring:
 
 server:
   port: 8080
-  address: ${AWS_PUBLIC_IP}
+  #address: ${AWS_PUBLIC_IP}
 
 serverName: blue_server
 
@@ -44,7 +41,7 @@ spring:
 
 server:
   port: 8081
-  address: ${AWS_PUBLIC_IP}
+  #address: ${AWS_PUBLIC_IP}
 
 serverName: green_server
 

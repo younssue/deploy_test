@@ -12,10 +12,8 @@ import java.util.Map;
 public class HealthCheckController {
     @Value("${server.env}")
     private String env;
-    @Value("${server.port}")
-    private String serverPort;
-    @Value("${server.address}")
-    private String address;
+
+
     @Value("${serverName}")
     private String serverName;
 
@@ -24,8 +22,6 @@ public class HealthCheckController {
     @GetMapping("/hc")
     public ResponseEntity<?> healthCheck(){
         Map<String,String> responseData = new HashMap<>();
-        responseData.put("serverPort", serverPort);
-        responseData.put("address", address);
         responseData.put("serverName", serverName);
         responseData.put("env",env);
 
