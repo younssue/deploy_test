@@ -17,7 +17,7 @@ public class HealthCheckController {
     @Value("${serverName}")
     private String serverName;
 
-    private String testName = "deployTest3";
+    private String testName = "deployTest4";
 
 
     @GetMapping("/hc")
