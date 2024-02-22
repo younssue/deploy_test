@@ -45,7 +45,7 @@ jobs:
         run: |
           STATUS=$(curl -o /dev/null -w "%{http_code}" "https://${{ secrets.LIVE_SERVER_IP }}/env")
           echo $STATUS
-          if [ $STATUS = 301 ]; then
+          if [ $STATUS = 200 ]; then
             CURRENT_UPSTREAM=$(curl -s "https://${{ secrets.LIVE_SERVER_IP }}/env")
           else
             CURRENT_UPSTREAM=green
