@@ -6,7 +6,8 @@ spring:
       blue: blue, common
       green: green, common
 
-
+server:
+  env: blue
 
 ---
 
