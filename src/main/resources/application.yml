@@ -16,8 +16,8 @@ spring:
     activate:
       on-profile: common
 
-serverName: common
 
+serverName: common
 
 ---
 
