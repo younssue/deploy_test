@@ -10,8 +10,8 @@ import java.util.Map;
 
 @RestController
 public class HealthCheckController {
-    //@Value("${server.env}")
-    //private String env;
+    @Value("${server.env}")
+    private String env;
 
 
     @Value("${serverName}")
@@ -29,10 +29,10 @@ public class HealthCheckController {
 
         return ResponseEntity.ok(responseData);
     }
-/*
-    @GetMapping("/env")
-    public ResponseEntity<?> getEnv(){
-        return ResponseEntity.ok(env);
+    
+     @GetMapping("/env")
+        public ResponseEntity<?> getEnv(){
+            return ResponseEntity.ok(env);
     }
-*/
+
 }
