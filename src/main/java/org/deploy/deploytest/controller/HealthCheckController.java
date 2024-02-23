@@ -43,7 +43,7 @@ public class HealthCheckController {
         healthCheckService.saveHealthCheck(healthCheckRequestDto);
     }
 
-    @GetMapping("hc2")
+    @GetMapping("/hc2")
     public  ResponseEntity<?> getHealthCheck(Long id){
         HealthCheckResponseDto healthCheckResponseDto = healthCheckService.getHealthCheck(id);
 
