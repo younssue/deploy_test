@@ -1,6 +1,8 @@
 package org.deploy.deploytest.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.deploy.deploytest.dto.HealthCheckRequestDto;
+import org.deploy.deploytest.dto.HealthCheckResponseDto;
 import org.deploy.deploytest.service.HealthCheckService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -37,8 +39,15 @@ public class HealthCheckController {
     }
 
     @PostMapping("/hc2")
-    public void postHealthCheck(){
-        healthCheckService.saveHealthCheck(env,serverName,testName);
+    public void postHealthCheck(HealthCheckRequestDto healthCheckRequestDto){
+        healthCheckService.saveHealthCheck(healthCheckRequestDto);
+    }
+
+    @GetMapping("hc2")
+    public  ResponseEntity<?> getHealthCheck(Long id){
+        HealthCheckResponseDto healthCheckResponseDto = healthCheckService.getHealthCheck(id);
+
+        return ResponseEntity.ok(healthCheckResponseDto);
     }
 
     @GetMapping("/env")

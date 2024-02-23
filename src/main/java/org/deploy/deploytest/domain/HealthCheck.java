@@ -14,14 +14,10 @@ public class HealthCheck {
     @Column(name = "id")
     private Long id;
 
-    private String env;
-    private String serverName;
     private String testName;
 
     @Builder
-    public HealthCheck(String env, String serverName, String testName) {
-        this.env = env;
-        this.serverName = serverName;
+    public HealthCheck( String testName) {
         this.testName = testName;
     }
 }
