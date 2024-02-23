@@ -2,9 +2,9 @@ name: CICD
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "dev3" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "dev3" ]
 
 permissions:
   contents: read
