@@ -24,15 +24,14 @@ public class HealthCheckController {
     public ResponseEntity<?> healthCheck(){
         Map<String,String> responseData = new HashMap<>();
         responseData.put("serverName", serverName);
-        //responseData.put("env",env);
+        responseData.put("env",env);
         responseData.put("testName",testName);
 
         return ResponseEntity.ok(responseData);
     }
-    
-     @GetMapping("/env")
-        public ResponseEntity<?> getEnv(){
-            return ResponseEntity.ok(env);
-    }
 
+    @GetMapping("/env")
+    public ResponseEntity<?> getEnv(){
+        return ResponseEntity.ok(env);
+    }
 }
