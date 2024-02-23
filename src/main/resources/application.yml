@@ -2,7 +2,7 @@ spring:
   profiles:
     active: local
     group:
-      local: common, db
+      local: common, db2
       blue: blue, common, db
       green: green, common , db
 

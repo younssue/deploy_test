@@ -2,9 +2,15 @@ package org.deploy.deploytest.dto;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
-@Builder
+@NoArgsConstructor
 public class HealthCheckRequestDto {
     String testName;
+
+    @Builder
+    public HealthCheckRequestDto(String testName) {
+        this.testName = testName;
+    }
 }

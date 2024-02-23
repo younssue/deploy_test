@@ -6,9 +6,7 @@ import org.deploy.deploytest.dto.HealthCheckResponseDto;
 import org.deploy.deploytest.service.HealthCheckService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,12 +37,12 @@ public class HealthCheckController {
     }
 
     @PostMapping("/hc2")
-    public void postHealthCheck(HealthCheckRequestDto healthCheckRequestDto){
+    public void postHealthCheck(@RequestBody HealthCheckRequestDto healthCheckRequestDto){
         healthCheckService.saveHealthCheck(healthCheckRequestDto);
     }
 
     @GetMapping("/hc2")
-    public  ResponseEntity<?> getHealthCheck(Long id){
+    public  ResponseEntity<?> getHealthCheck(@RequestParam Long id){
         HealthCheckResponseDto healthCheckResponseDto = healthCheckService.getHealthCheck(id);
 
         return ResponseEntity.ok(healthCheckResponseDto);

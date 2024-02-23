@@ -6,6 +6,7 @@ import org.deploy.deploytest.dto.HealthCheckRequestDto;
 import org.deploy.deploytest.dto.HealthCheckResponseDto;
 import org.deploy.deploytest.repository.HealthCheckRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
